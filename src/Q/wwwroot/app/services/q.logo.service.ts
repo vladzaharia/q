@@ -8,12 +8,16 @@ export class QLogoService {
     if (theme === "white") {
       return DEFAULT_LOGOS_WHITE
     }
-    
+
     return DEFAULT_LOGOS;
   }
 
-  getLogo(color: string): QLogo {
-      return DEFAULT_LOGOS.filter((logo: QLogo) => { return logo.colorName === color; })[0];
+  getLogo(color: string, theme?: string): QLogo {
+    if (theme === "white") {
+      return DEFAULT_LOGOS_WHITE.filter((logo: QLogo) => { return logo.colorName === color; })[0];
+    }
+    
+    return DEFAULT_LOGOS.filter((logo: QLogo) => { return logo.colorName === color; })[0];
   }
 }
 
@@ -28,7 +32,7 @@ const DEFAULT_LOGOS: QLogo[] = [
 ]
 
 const DEFAULT_LOGOS_WHITE: QLogo[] = [
-    { colorName: "white", circleColor: "#FFFFFF", dotColor: "#FFFFFF" },
+    { colorName: "black", circleColor: "#FFFFFF", dotColor: "#FFFFFF" },
     { colorName: "grey", circleColor: "#FFFFFF", dotColor: "#808285" },
     { colorName: "blue", circleColor: "#FFFFFF", dotColor: "#188bc5" },
     { colorName: "green", circleColor: "#FFFFFF", dotColor: "#4cb749" },

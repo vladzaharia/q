@@ -1,7 +1,4 @@
 import { Component, Input } from "@angular/core";
-import { Observable } from 'rxjs/Rx';
-
-import { QLogoService } from "../services/q.logo.service";
 
 @Component({
     selector: "q-logo",
@@ -12,35 +9,11 @@ import { QLogoService } from "../services/q.logo.service";
                 <rect [style.fill]="logo.circleColor" x='72.45' y='65.5' width='18.02' height='40.69' transform='translate(-35.5 103.88) rotate(-55.26)'/>
             </g>
             <circle [style.fill]="logo.dotColor" class='qdot' cx='116.73' cy='110.4' r='10.16'/>
-        </svg>`,
-    providers: [ QLogoService ]
-
+        </svg>`
 })
 export class QLogoComponent {
     @Input()
     logo: QLogo;
-
-    @Input()
-    rainbow: boolean;
-
-    logoService: QLogoService;
-
-    constructor(logoService: QLogoService) {
-        this.logoService = logoService;
-    }
-
-    ngOnInit() {
-        if (this.rainbow) {
-            let timer = Observable.timer(0, 2000);
-            let logos = this.logoService.getAllLogos();
-            
-            this.logo = logos[0];
-
-            timer.subscribe((value) => {
-                this.logo = logos[value%logos.length];
-            });
-        }
-    }
 }
 
 export class QLogo { 

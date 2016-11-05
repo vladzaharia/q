@@ -17,7 +17,7 @@ var Q = (function () {
     Q = __decorate([
         core_1.Component({
             selector: "my-app",
-            template: "<div class=\"main-section\">\n            <h1>Q is coming...</h1>\n         </div>\n\n         <div class=\"footer-section\">\n            <q-logo [logo]='currentLogo' [rainbow]='true'></q-logo>\n         </div>\n         "
+            template: "<div class=\"main-section\">\n            <h1>Q is coming...</h1>\n         </div>\n\n         <footer-section></footer-section>\n         "
         }), 
         __metadata('design:paramtypes', [])
     ], Q);

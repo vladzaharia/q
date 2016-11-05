@@ -11,9 +11,7 @@ import { DEFAULT_LOGO } from "../services/q.logo.service";
             <h1>Q is coming...</h1>
          </div>
 
-         <div class="footer-section">
-            <q-logo [logo]='currentLogo' [rainbow]='true'></q-logo>
-         </div>
+         <footer-section></footer-section>
          `
 })
 

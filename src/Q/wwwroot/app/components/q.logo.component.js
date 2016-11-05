@@ -9,38 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var Rx_1 = require('rxjs/Rx');
-var q_logo_service_1 = require("../services/q.logo.service");
 var QLogoComponent = (function () {
-    function QLogoComponent(logoService) {
-        this.logoService = logoService;
+    function QLogoComponent() {
     }
-    QLogoComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        if (this.rainbow) {
-            var timer = Rx_1.Observable.timer(0, 2000);
-            var logos_1 = this.logoService.getAllLogos();
-            this.logo = logos_1[0];
-            timer.subscribe(function (value) {
-                _this.logo = logos_1[value % logos_1.length];
-            });
-        }
-    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', QLogo)
     ], QLogoComponent.prototype, "logo", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], QLogoComponent.prototype, "rainbow", void 0);
     QLogoComponent = __decorate([
         core_1.Component({
             selector: "q-logo",
-            template: "<svg id='qlogo' data-name='Q Logo' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 144 144'>\n            <g class='qcircle'>\n                <path [style.fill]=\"logo.circleColor\" d='M114.73,72A48.56,48.56,0,1,1,66.17,23.44,48.56,48.56,0,0,1,114.73,72ZM66.17,41.46A30.54,30.54,0,1,0,96.71,72,30.54,30.54,0,0,0,66.17,41.46Z'/>\n                <rect [style.fill]=\"logo.circleColor\" x='72.45' y='65.5' width='18.02' height='40.69' transform='translate(-35.5 103.88) rotate(-55.26)'/>\n            </g>\n            <circle [style.fill]=\"logo.dotColor\" class='qdot' cx='116.73' cy='110.4' r='10.16'/>\n        </svg>",
-            providers: [q_logo_service_1.QLogoService]
+            template: "<svg id='qlogo' data-name='Q Logo' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 144 144'>\n            <g class='qcircle'>\n                <path [style.fill]=\"logo.circleColor\" d='M114.73,72A48.56,48.56,0,1,1,66.17,23.44,48.56,48.56,0,0,1,114.73,72ZM66.17,41.46A30.54,30.54,0,1,0,96.71,72,30.54,30.54,0,0,0,66.17,41.46Z'/>\n                <rect [style.fill]=\"logo.circleColor\" x='72.45' y='65.5' width='18.02' height='40.69' transform='translate(-35.5 103.88) rotate(-55.26)'/>\n            </g>\n            <circle [style.fill]=\"logo.dotColor\" class='qdot' cx='116.73' cy='110.4' r='10.16'/>\n        </svg>"
         }), 
-        __metadata('design:paramtypes', [q_logo_service_1.QLogoService])
+        __metadata('design:paramtypes', [])
     ], QLogoComponent);
     return QLogoComponent;
 }());

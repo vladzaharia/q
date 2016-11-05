@@ -18,7 +18,10 @@ var QLogoService = (function () {
         }
         return DEFAULT_LOGOS;
     };
-    QLogoService.prototype.getLogo = function (color) {
+    QLogoService.prototype.getLogo = function (color, theme) {
+        if (theme === "white") {
+            return DEFAULT_LOGOS_WHITE.filter(function (logo) { return logo.colorName === color; })[0];
+        }
         return DEFAULT_LOGOS.filter(function (logo) { return logo.colorName === color; })[0];
     };
     QLogoService = __decorate([
@@ -37,7 +40,7 @@ var DEFAULT_LOGOS = [
     { colorName: "phs", circleColor: "#00463c", dotColor: "#f4ec54" }
 ];
 var DEFAULT_LOGOS_WHITE = [
-    { colorName: "white", circleColor: "#FFFFFF", dotColor: "#FFFFFF" },
+    { colorName: "black", circleColor: "#FFFFFF", dotColor: "#FFFFFF" },
     { colorName: "grey", circleColor: "#FFFFFF", dotColor: "#808285" },
     { colorName: "blue", circleColor: "#FFFFFF", dotColor: "#188bc5" },
     { colorName: "green", circleColor: "#FFFFFF", dotColor: "#4cb749" },
