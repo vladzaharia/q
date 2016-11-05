@@ -9,17 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var QComponent = (function () {
-    function QComponent() {
+var Rx_1 = require('rxjs/Rx');
+var q_logo_1 = require("../services/q.logo");
+var Q = (function () {
+    function Q(logoService) {
+        var _this = this;
+        var timer = Rx_1.Observable.timer(0, 2000);
+        var logos = logoService.getAllLogos();
+        timer.subscribe(function (value) {
+            _this.currentLogo = logos[value % logos.length];
+        });
     }
-    QComponent = __decorate([
+    Q = __decorate([
         core_1.Component({
             selector: "my-app",
-            template: "<h1>Q</h1>"
+            template: "<q-logo (logo)='currentLogo'></q-logo>",
+            providers: [q_logo_1.QLogoService]
         }), 
-        __metadata('design:paramtypes', [])
-    ], QComponent);
-    return QComponent;
+        __metadata('design:paramtypes', [(typeof (_a = typeof q_logo_1.QLogoService !== 'undefined' && q_logo_1.QLogoService) === 'function' && _a) || Object])
+    ], Q);
+    return Q;
+    var _a;
 }());
-exports.QComponent = QComponent;
-//# sourceMappingURL=q.component.js.map
+exports.Q = Q;
+//# sourceMappingURL=q.js.map

@@ -1,12 +1,13 @@
 ﻿import { NgModule }      from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
-import { QComponent } from "./q.component";
+import { Q } from "../components/q.component";
+import { QLogoComponent } from "../components/q.logo.component";
 
 @NgModule({
     imports: [BrowserModule],
-    declarations: [QComponent],
-    bootstrap: [QComponent]
+    declarations: [Q, QLogoComponent],
+    bootstrap: [Q]
 })
 
 export class QModule { }

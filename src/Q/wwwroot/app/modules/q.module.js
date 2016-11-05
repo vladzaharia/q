@@ -10,15 +10,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
-var q_component_1 = require("./q.component");
+var q_component_1 = require("../components/q.component");
+var q_logo_component_1 = require("../components/q.logo.component");
 var QModule = (function () {
     function QModule() {
     }
     QModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule],
-            declarations: [q_component_1.QComponent],
-            bootstrap: [q_component_1.QComponent]
+            declarations: [q_component_1.Q, q_logo_component_1.QLogoComponent],
+            bootstrap: [q_component_1.Q]
         }), 
         __metadata('design:paramtypes', [])
     ], QModule);
